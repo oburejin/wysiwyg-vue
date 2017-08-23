@@ -1,14 +1,14 @@
 <template>
   <div>
-    element
+    element stub
   </div>
 </template>
 
 
 <script>
 export default {
-  name: 'Element',
-  data () {
+  name: 'ElementStub',
+  data: function () {
     return {
 
     }

@@ -1,19 +1,31 @@
 <template>
   <div class='add-block-line' tabIndex='1'>
-    <button class='add-block'>✚</button>
+    <button class='add-block' @click="$el.focus()">✚</button>
     <div class='elements-panel mod-flex'>
-      <div class='emenents-panel__element'>Text</div>
-      <div class='emenents-panel__element'>Stub</div>
+      <div class='emenents-panel__element' @click="add_block(BLOCK_TYPES.text)">Text</div>
+      <div class='emenents-panel__element' @click="add_block(BLOCK_TYPES.stub)">Stub</div>
     </div>
   </div>  
 </template>
 
 <script>
+
+import BLOCK_TYPES from '../store/modules/block-types';
+
 export default {
   name: 'AddBlock',
-  data() {
+  props: ['position'],
+  data: function() {
     return {
-
+      BLOCK_TYPES
+    }
+  },
+  methods: {
+    add_block: function(type) {
+      this.$el.blur();
+      this.$store.commit('add_block', {position: this.position,
+         type: type
+        });
     }
   }
   

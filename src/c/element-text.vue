@@ -1,18 +1,23 @@
 <template>
   <div contentEditable='true'
-           className='element-text'
-           onInput={this.props.update}
-  >
-    <div className="element-text-wrapper">
-        <p className='element-text-p' autoFocus='true'></p>
-    </div>
+           class='element-text'
+      >
+      <div class="element-text-wrapper">
+         <p class='element-text-p' autoFocus='true'></p>
+      </div>
       
-  </div>
+      </div>
 </template>
+
 
 <script>
 export default {
-  
+  name: 'ElementText',
+  data: function () {
+    return {
+
+    }
+  }  
 }
 </script>
 <style lang="sass">
@@ -26,7 +31,7 @@ export default {
   flex-direction: column
 
 .element-text-p
-  margin: 0 0 10px
+  margin: 0 3px 10px
   transition: all 300ms
   outline: 1px solid transparent
   &:hover

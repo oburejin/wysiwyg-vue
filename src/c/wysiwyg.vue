@@ -14,7 +14,7 @@ import Block from './block.vue';
 export default {
   name: 'Wysiwyg',
   props: ['blocks'],
-  data () {  
+  data: function () {  
     return {
 
     }

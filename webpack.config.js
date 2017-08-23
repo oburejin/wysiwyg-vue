@@ -28,7 +28,10 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015']
+        }
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -76,14 +79,14 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       compress: {
         warnings: false
       }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
     })
   ])
 }

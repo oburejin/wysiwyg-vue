@@ -11,7 +11,7 @@
 export default {
   name: 'ControlPanel',
   props: ['position'],
-  data () {
+  data: function () {
     return {
     }
   }
